@@ -1,0 +1,10 @@
+#Data files
+*.txt
+
+#config file
+config.py
+
+#Compiled files
+*.pyc
+
+
