@@ -27,11 +27,10 @@ def run_bot(login, subreddit, word, comment_id, limit):
    	 			with open ("comment_id.txt", "a") as f:
    	 					f.write(comment.id + "\n")
 
-
    	 			with open ("comments_recorded.txt", "a") as f:
    	 					author = " --" + str(comment.author)
    	 					time_posted = " --" + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(comment.created))
-   	 					body = str(comment.body.strip())
+   	 					body = comment.body.encode('utf-8')
    	 					f.write(body + author + time_posted + "\n\n\n")
 
    		print "Sleeping for 10 seconds..."
